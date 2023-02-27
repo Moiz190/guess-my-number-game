@@ -5,27 +5,28 @@ let questionMark =document.getElementById('questionMark');
 let questionMarkDiv = document.getElementById('questionMarkDiv');
 let score = 20;
 let highscore = 0;
+let getVal=document.querySelector('#guessinp');
 function startCheck(){
-    const getVal =Number(document.querySelector('#guessinp').value);
-    if(getVal < 1 || getVal>20){
+    const getInputVal =Number(getVal.value);
+    if(getInputVal < 1 || getInputVal>20){
         startGuess.innerHTML = "Invalid Number"
     }
-    else if(getVal == random){
+    else if(getInputVal == random){
         gameContainer.style.backgroundColor = '#0cc30c';
-        document.querySelector('#guessinp').style.backgroundColor ='#0cc30c';
-        questionMark.innerHTML = getVal;
+        getVal.style.backgroundColor ='#0cc30c';
+        questionMark.innerHTML = getInputVal;
         questionMarkDiv.style.width= "11rem";
         startGuess.innerHTML="&#127881; Correct Answer";
         if(highscore < score){
             document.querySelector('#highScore').textContent = score;
             highscore = score;
-            document.querySelector('#guessinp').disabled = true;
+            getVal.disabled = true;
         }
         else{
             return
         }
     }
-    else if (getVal > random){
+    else if (getInputVal > random){
         score--;
         document.querySelector('#score').textContent = score;
         if(score > 1){
@@ -34,11 +35,10 @@ function startCheck(){
         else if(score == 0) {
             startGuess.innerHTML = "Game Over"
             score = 1;
-            let inputVal = document.querySelector('#guessinp');
-          inputVal.disabled = true;   
+          getVal.disabled = true;   
         }
     }
-    else if (getVal < random){
+    else if (getInputVal < random){
         score--;
         document.querySelector('#score').textContent = score;
         if(score > 1){
@@ -47,12 +47,11 @@ function startCheck(){
         else if(score == 0) {
             startGuess.innerHTML = "Game Over"
             score = 1;
-
+            getVal.disabled =true;
         }
     }
 }
 function reset(){
-    const getVal =document.querySelector('#guessinp');
     getVal.value = '';
     getVal.style.backgroundColor = "#222";
     gameContainer.style.backgroundColor="#222";
