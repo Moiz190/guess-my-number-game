@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Press Start';
+    src: url('font/PressStart2P-Regular.ttf');
+}
+body{
+    background-color: #222;
+    color: #ffffff;
+    font-family: 'Press Start';
+    min-height: 100vh;
+}
+.flex{
+    display: flex;
+}
+.column{
+    flex-direction: column;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-around{
+    justify-content: space-around;
+}
+.align-center{
+    align-items: center;
+}
+.text-center{
+    text-align: center;
+}
+.d-none{
+    display: none;
+}
+.container{
+    padding: 1rem;
+    min-height: 100vh;
+}
+.topbar-container{
+    padding-bottom: 3rem;
+}
+.again-text-container{
+    background-color: #fff;
+    color: #222;
+    font-size: 0.8rem;
+    width: 6rem;
+    padding: 0.7rem;
+}
+.guessing-range-container span{
+    font-size: 0.55rem;
+}
+.question-mark-container{
+    border-bottom: 4px solid #ffffff;
+    position: relative;
+    margin: 4.5rem 0;
+}
+.question-mark-container div{
+    background-color: #fff;
+    color: #000;
+    width: 7rem;
+    height: 4rem;
+    font-size: 2.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -1.9rem;
+    padding-left:0.2rem;
+}
+.game-name-container{
+    font-size:1.1rem;
+    font-weight: bold;
+}
+.enter-number-container input{
+    width: 8rem;
+    height: 3.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Press Start';
+    background-color: #222;
+    color: #fff;
+    outline: none;
+    border: 2px solid #fff;
+    padding: 0 1rem;
+}
+.check-guessed-btn{
+    margin-top: 1rem;
+}
+.enter-number-container .check-guessed-btn button{
+    padding: 0.7rem 1rem;
+    font-family: 'Press Start';
+}
+.score-container{
+    padding-top: 1.5rem;
+    font-size: 1rem;
+    line-height:2rem;
+}
+.score-container .score-icon{
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+@media (min-width:768px) {
+    .again-text-container{
+        width: 9rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+    .again-text-container:hover{
+        background-color: #d8d8d8;
+    }
+    .guessing-range-container span{
+        font-size: 0.8rem;
+    }
+    .game-name-container{
+        font-size: 2rem;
+    }
+    .question-mark-container{
+        margin:6.5rem 0;
+    }
+    .question-mark-container div{
+        width: 7rem;
+        height: 5rem;
+        top: -2.5rem;
+        font-size: 3rem;
+    }
+    .play-game-container{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+    }
+    .score-container{
+        padding-top: 0;
+        text-align: start;
+        line-height: 3rem;
+        min-width: 280px;
+    }
+    .enter-number-container input{
+        width: 11rem;
+        height: 5rem;
+        font-size: 2rem;
+    }
+    .enter-number-container .check-guessed-btn button{
+        padding: 1.1rem 1.5rem;
+    }
+}
